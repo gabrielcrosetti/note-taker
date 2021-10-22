@@ -2,7 +2,7 @@
   "name": "note-taker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -20,7 +20,6 @@
   "homepage": "https://github.com/gabrielcrosetti/note-taker#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "util": "^0.12.4"
+    "short-uuid": "^4.2.0"
   }
 }
