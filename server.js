@@ -11,14 +11,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 
-// app.use((req, res) => {
-//     res.status(404).end();
-// });
-
-
-
-
-
 function filterByQuery(query, notesArray) {
     let filteredResults = notesArray;
     if (query.title) {
@@ -54,14 +46,8 @@ function createNote(body, notesArray) {
 
 // GET to send to notes html 
 
-
-
 app.get('/api/notes', (req, res) => {
     console.log(db)
-    // let results = notes;
-    // if (req.query) {
-    //     results = filterByQuery(req.query, results);
-    // }
     res.json(db);
 });
 
@@ -78,12 +64,9 @@ app.delete('/api/notes/:id', (req, res) => {
 
 app.post('/api/notes', (req, res) => {
     console.log(req.body)
-    // req.body.id = notes.length.toString();
     const note = createNote(req.body, db);
     res.json(note);
 });
-
-
 
 
 app.get('/', (req, res) => {
@@ -100,10 +83,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
-
-// Update a note
-
-// To elete a note
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
