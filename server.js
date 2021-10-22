@@ -70,7 +70,8 @@ app.get('/api/notes', (req, res) => {
 app.delete('/api/notes/:id', (req, res) => {
     console.log(req.params.id)
     let results = findNoteById(req.params.id, db);
-    res.status(200);
+    // res.status(200);
+    res.json(db)
 });
 
 // Creates new note
